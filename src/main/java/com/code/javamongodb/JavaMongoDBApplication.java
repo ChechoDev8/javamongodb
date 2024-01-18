@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExamplejavaApplication {
+public class JavaMongoDBApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ExamplejavaApplication.class, args);
+		SpringApplication.run(JavaMongoDBApplication.class, args);
 	}
 
 }
