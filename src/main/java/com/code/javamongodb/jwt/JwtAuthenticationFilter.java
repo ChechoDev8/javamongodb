@@ -2,6 +2,7 @@ package com.code.javamongodb.jwt;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,22 +17,22 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 
 @Component
-@RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-	private final JwtService jwtService;
+	@Autowired
+	private JwtService jwtService;
 	
-	private final UserDetailsService userDetailsService;
+	@Autowired
+	private UserDetailsService userDetailsService;
 	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		
-		final String token = getTokenFromRequest(request);
-		final String username;
+		String token = getTokenFromRequest(request);
+		String username;
 		if(token == null) {
 			filterChain.doFilter(request, response);
 			return;

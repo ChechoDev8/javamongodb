@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import org.modelmapper.internal.objenesis.instantiator.basic.NewInstanceInstantiator;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +45,7 @@ public class JwtService {
 	}
 
 	public boolean isTokenValid(String token, UserDetails userDetails) {
-		 final String username = getUsernameFromToken(token);
+		 String username = getUsernameFromToken(token);
 		 return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
 	}
 	
@@ -60,7 +59,7 @@ public class JwtService {
 	}
 	
 	public <T> T getClaim(String token, Function<Claims, T> claimsResolver) {
-		final Claims claims = getAllClaims(token);
+		Claims claims = getAllClaims(token);
 		return claimsResolver.apply(claims);
 	}
 	

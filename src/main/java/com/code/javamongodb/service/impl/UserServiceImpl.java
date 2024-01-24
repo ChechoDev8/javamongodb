@@ -12,10 +12,7 @@ import com.code.javamongodb.model.UserModel;
 import com.code.javamongodb.repository.UserRepository;
 import com.code.javamongodb.service.UserService;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     
 	@Autowired
