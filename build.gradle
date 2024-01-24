@@ -15,29 +15,38 @@ repositories {
 	mavenCentral()
 }
 
+
+ext {
+	lombokversion='1.18.30'
+	jwtversion='0.12.3'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'	
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	/* MONGODB */
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 		
 	
-	/*LOMBOK*/
-	compileOnly "org.projectlombok:lombok:1.18.30"
-	annotationProcessor "org.projectlombok:lombok:1.18.30"
-	testCompileOnly "org.projectlombok:lombok:1.18.30"
-	testAnnotationProcessor "org.projectlombok:lombok:1.18.30"
+	/* LOMBOK */
+	compileOnly "org.projectlombok:lombok:$lombokversion"
+	annotationProcessor "org.projectlombok:lombok:$lombokversion"
+	testCompileOnly "org.projectlombok:lombok:$lombokversion"
+	testAnnotationProcessor "org.projectlombok:lombok:$lombokversion"
+	
+	/* JWT */
+	implementation "io.jsonwebtoken:jjwt-api:$jwtversion"
+	runtimeOnly "io.jsonwebtoken:jjwt-impl:$jwtversion"
+	runtimeOnly "io.jsonwebtoken:jjwt-jackson:$jwtversion"
+	
+	implementation 'org.modelmapper:modelmapper:2.1.1'
 	
 	
 
 }
-
-//version{
-	//mybatis= "3.0.2"
-	//lombok= "1.18.30"
-//}
 
 tasks.named('test') {
 	useJUnitPlatform()
