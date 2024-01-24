@@ -1,6 +1,6 @@
 # Java MongoDB CRUD Application
 
-Este proyecto es una aplicación Java que realiza operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una base de datos MongoDB. La aplicación está diseñada para demostrar cómo interactuar eficientemente con MongoDB desde Java.
+Este proyecto es una aplicación Java que lleva a cabo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una base de datos MongoDB. La aplicación está diseñada originalmente para mostrar cómo interactuar eficientemente con MongoDB desde Java. Recientemente, se ha implementado un nivel adicional de seguridad mediante el uso de JWT (JSON Web Token) para garantizar una gestión segura y autenticada de las operaciones CRUD. Esta mejora fortalece la integridad y confidencialidad de las transacciones, asegurando un manejo más robusto y protegido de los datos en el contexto de la aplicación.
 
 ## Requisitos previos
 
