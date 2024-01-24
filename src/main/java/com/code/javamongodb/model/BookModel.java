@@ -11,7 +11,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Document(collection = "Books")
-public class Book {
+public class BookModel {
 	@Id
 	private int id;
 	private String name;
